@@ -1,0 +1,65 @@
+
+> frontend@0.1.0 lint
+> eslint
+
+
+C:\GAURAV\development\hackathon\os\frontend\convex\_generated\api.js
+  1:1  warning  Unused eslint-disable directive (no problems were reported)
+
+C:\GAURAV\development\hackathon\os\frontend\convex\_generated\dataModel.d.ts
+  1:1  warning  Unused eslint-disable directive (no problems were reported)
+
+C:\GAURAV\development\hackathon\os\frontend\convex\_generated\server.d.ts
+  1:1  warning  Unused eslint-disable directive (no problems were reported)
+
+C:\GAURAV\development\hackathon\os\frontend\convex\_generated\server.js
+  1:1  warning  Unused eslint-disable directive (no problems were reported)
+
+C:\GAURAV\development\hackathon\os\frontend\convex\ai\generateLetter.ts
+  199:14  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\GAURAV\development\hackathon\os\frontend\convex\ai\letterPdf.ts
+  20:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  46:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  46:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  46:65  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\GAURAV\development\hackathon\os\frontend\convex\discovery\gmailScan.ts
+   24:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   42:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  108:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  109:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\GAURAV\development\hackathon\os\frontend\convex\discovery\patterns.ts
+  12:8  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\GAURAV\development\hackathon\os\frontend\convex\export\evidenceBundle.ts
+   8:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   9:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  30:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\GAURAV\development\hackathon\os\frontend\convex\scripts.ts
+  5:19  warning  'ctx' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\GAURAV\development\hackathon\os\frontend\src\app\layout.tsx
+  29:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+C:\GAURAV\development\hackathon\os\frontend\src\components\screens\ChooseInvitees.tsx
+  19:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\GAURAV\development\hackathon\os\frontend\src\components\screens\ConnectInbox.tsx
+  72:21  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\GAURAV\development\hackathon\os\frontend\src\components\screens\EstateBoard.tsx
+   49:15  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  211:25  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\GAURAV\development\hackathon\os\frontend\src\components\screens\OwnerVaultDashboard.tsx
+  107:31  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\GAURAV\development\hackathon\os\frontend\src\components\screens\ScanProgress.tsx
+  18:9  warning  'scannedCount' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 25 problems (12 errors, 13 warnings)
+  0 errors and 4 warnings potentially fixable with the `--fix` option.
+
