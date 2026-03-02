@@ -1,232 +1,90 @@
-# Afterword
+<p align="center">
+  <img src="./public/afterword_hero_banner.png" alt="AfterWord Hero Banner" width="100%" style="border-radius: 12px; margin-bottom: 24px;" />
+</p>
 
-> Close the final chapter.
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=42&duration=3000&pause=1200&color=2DD4BF&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=120&lines=%E2%9C%A6+AfterWord+Frontend;The+Interface+of+Closure.;Secure+and+Empathetic." alt="Typing Animation" />
+</p>
 
-Afterword is a free, open-source, privacy-first digital estate management platform. It helps families discover, close, and document online accounts after someone dies. It works whether the person planned ahead using Afterword or never registered at all.
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js_16-black?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+</p>
 
----
+<br/>
 
-## The Problem
+## 🚀 Frontend Getting Started
 
-When someone passes away, families are left dealing with:
+This directory contains the Next.js frontend and Convex backend functions for the AfterWord platform.
 
-- 50–150+ online accounts
-- Months of platform-by-platform email exchanges
-- Legal uncertainty across states and countries
-- Emotional exhaustion on top of grief
-
-Most existing solutions require pre-registration. Real life does not work that way.
-
-Afterword is built for both realities:
-1. Planned estates
-2. Unexpected deaths with no prior setup
-
----
-
-## Core Features
-
-### 1. Dual-Mode System
-
-**Owner Mode (Pre-Death Planning)**
-- Create encrypted vault
-- Add account inventory
-- Designate invitees
-- Assign trusted guardian
-- Define unlock preferences
-
-**Executor Mode (Post-Death Recovery)**
-- Works even if the deceased never used Afterword
-- Gmail metadata scan or `.mbox` upload
-- AI-powered account discovery
-- Legally targeted closure letters
-- Estate progress board
-- Downloadable evidence bundle
-
----
-
-### 2. Trusted Guardian Unlock Flow
-
-Two-factor human-based verification:
-
-- Knowledge factor (legal name, date of death, state)
-- OTP sent to designated guardian
-
-Prevents casual abuse while keeping real families unblocked.
-
----
-
-### 3. Gmail Metadata Discovery (Privacy-Safe)
-
-- Uses `gmail.metadata` scope only
-- Reads headers only (sender, subject, date)
-- Never reads email bodies
-- Tokens encrypted and revoked after scan
-
-Alternative: Upload `.mbox` export.
-
----
-
-### 4. AI Legal Letter Generation
-
-- Platform-aware
-- State-aware
-- Relationship-aware
-- Emotionally appropriate tone
-- Generates structured, professional closure letters
-- PDF export ready for submission
-
----
-
-### 5. Evidence Bundle Export
-
-At completion, executors can export:
-
-- Platform logs
-- Submitted letters
-- Action history
-- Timestamped activity trail
-
-Designed to support probate and legal processes.
-
----
-
-## Tech Stack
-
-- Next.js (App Router, Server Components)
-- TypeScript
-- Convex (TypeScript-native database + serverless functions)
-- HuggingFace Inference API
-- Saul-Instruct Legal LLM
-- Vercel
-- Resend (email delivery)
-- pdf-lib (PDF generation)
-- Tailwind CSS
-- Turborepo (monorepo structure)
-
-The stack was intentionally chosen to allow meaningful scale on free tiers.
-
----
-
-## Architecture Overview
-
-### Data Security Model
-
-- Client-side AES-256 encryption for sensitive vault data
-- Server stores encrypted blobs only
-- Time-limited access tokens
-- Estate auto-expiration (90 days)
-- Rate limiting and unlock attempt protection
-
-### Discovery Engine
-
-- Pattern matching for common platforms
-- Sender-domain intelligence
-- AI classification layer
-- Platform database mapping
-
----
-
-## Local Development Setup
-
-### 1. Clone Repository
+### 1. Installation
 
 ```bash
-git clone https://github.com/your-org/afterword.git
-cd afterword
 npm install
 ```
 
-2. Run Convex Locally
-npx convex dev
-npx convex deploy
-3. Environment Variables
+### 2. Configure Environment
 
-Configure in Convex dashboard:
+Create a `.env.local` file:
 
-HF_TOKEN (HuggingFace token)
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_key
+CLERK_SECRET_KEY=your_key
+CONVEX_DEPLOYMENT=your_deployment_id
+NEXT_PUBLIC_CONVEX_URL=your_convex_url
+```
 
-Google OAuth credentials (for Gmail metadata scope)
+### 3. Run Development Server
 
-Resend API key
-
-4. Start App
+```bash
 npm run dev
+# and in another terminal
+npx convex dev
+```
 
-Visit:
+---
 
-http://localhost:3000
-Project Structure (Simplified)
-apps/
-  web/               # Next.js frontend
-packages/
-  db/                # Convex schema + functions
-  types/             # Shared TypeScript types
-  ai/                # Letter generation logic
-  platform-db/       # Community-maintained platform data
-Contributing
+## 🎨 Design System
 
-High-impact areas:
+AfterWord uses a custom design system built with **Tailwind CSS**, focusing on:
+- **Glassmorphism**: Translucent cards and navigation for a modern, premium feel.
+- **Accessibility**: High contrast ratios and readable typography (Outfit & Inter).
+- **Micro-interactions**: Smooth transitions and hover states to guide executors through difficult tasks.
 
-Expanding platform database
+### Key Components
 
-Improving letter templates
+- **LandingPage**: A cinematic entrance explaining the platform's value.
+- **EstateBoard**: A dense, informative dashboard for tracking 100+ accounts.
+- **VaultInterface**: A military-grade secure area for PII management.
 
-State-specific legal adjustments
+---
 
-Accessibility improvements
+## 🏗️ Folder Structure
 
-Security audits
+```
+src/
+├── app/                  # App Router: Layouts, Pages, and API routes
+├── components/
+│   ├── screens/          # Full-page screen components
+│   ├── ui/               # Primary UI bricks (Button, Card, Input)
+│   └── icons/            # Lucide-based custom icon set
+├── data/                 # Platform DB, mock data, and constants
+├── hooks/                # useVault, useEstate, and useClerkAuth
+└── lib/                  # Crypto utilities, AI helpers, and formatting
+```
 
-Contribution Flow
+---
 
-Fork the repo
+## ⚖️ AI Integration
 
-Create feature branch
+The frontend communicates with Convex actions to perform:
+- **Legal Character Matching**: Categorizing accounts into legal archetypes.
+- **Saul-Instruct Generation**: Drafting formal closure letters.
+- **Gemini-Powered Discovery**: Identifying accounts from email metadata.
 
-Add tests where relevant
+---
 
-Submit PR
-
-Pass review checklist
-
-This is a mission-driven project. Precision matters.
-
-Roadmap
-
-Broader platform coverage
-
-International legal support
-
-Automated document verification workflows
-
-Improved AI explainability
-
-Guardian multi-sig unlock option
-
-Design Principles
-
-Privacy first
-
-Free forever core
-
-Zero dark patterns
-
-Real-world legal practicality
-
-Human-centered UX in grief contexts
-
-License
-
-MIT License.
-
-Open-source by design. Built for community stewardship.
-
-Disclaimer
-
-Afterword provides informational tools and document generation support. It is not a law firm and does not provide legal advice. Users should consult qualified attorneys for jurisdiction-specific guidance.
-
-Why This Exists
-
-Digital death is a modern problem. Families deserve better tools than spreadsheets and guesswork.
-
-Afterword exists to reduce friction at one of the hardest moments in life.
+<p align="center">
+  Built with 🕯️ for Digital Legacy & Closure.
+</p>

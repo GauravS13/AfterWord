@@ -17,8 +17,8 @@ export const OwnerVaultDashboard: React.FC<OwnerVaultDashboardProps> = () => {
   const [openMenuId, setOpenMenuId] = useState<number | null>(null);
   
   // Calculate completion
-  const financialAccs = accounts?.filter(a => a.tier === "FINANCIAL") || [];
-  const identityAccs = accounts?.filter(a => a.tier === "IDENTITY") || [];
+  const financialAccs = accounts?.filter((a: any) => a.tier === "FINANCIAL") || [];
+  const identityAccs = accounts?.filter((a: any) => a.tier === "IDENTITY") || [];
   const completionPercent = accounts?.length ? Math.min(100, accounts.length * 15) : 0; // Simple heuristic for hackathon
 
   // Group accounts by tier for display
@@ -27,7 +27,7 @@ export const OwnerVaultDashboard: React.FC<OwnerVaultDashboardProps> = () => {
       title: "Financial Accounts",
       icon: "account_balance",
       iconColor: "emerald-500",
-      accounts: financialAccs.map(a => ({
+      accounts: financialAccs.map((a: any) => ({
         name: a.serviceName,
         tier: "Financial Tier",
         icon: "account_balance",
@@ -40,7 +40,7 @@ export const OwnerVaultDashboard: React.FC<OwnerVaultDashboardProps> = () => {
       title: "Identity & Government",
       icon: "badge",
       iconColor: "blue-500",
-      accounts: identityAccs.map(a => ({
+      accounts: identityAccs.map((a: any) => ({
         name: a.serviceName,
         tier: "Identity Tier",
         icon: "badge",
@@ -51,7 +51,7 @@ export const OwnerVaultDashboard: React.FC<OwnerVaultDashboardProps> = () => {
     }
   ].filter(section => section.accounts.length > 0);
 
-  const people = (invitees || []).map(inv => ({
+  const people = (invitees || []).map((inv: any) => ({
     name: inv.nameEnc,
     role: inv.role === "EXECUTOR" ? "Primary Executor" : (inv.role === "CO_EXECUTOR" ? "Backup Executor" : "Memorial Contact"),
     roleColor: inv.role === "EXECUTOR" ? "primary" : "slate-500",
@@ -153,7 +153,7 @@ export const OwnerVaultDashboard: React.FC<OwnerVaultDashboardProps> = () => {
                   <button className="text-sm font-medium text-slate-500 hover:text-primary transition-colors">Manage</button>
                 </div>
                 <div className="flex flex-col gap-3">
-                  {section.accounts.map((acc, aIdx) => (
+                  {section.accounts.map((acc: any, aIdx: number) => (
                     <div key={aIdx} className="group relative flex flex-col gap-4 rounded-xl bg-white dark:bg-slate-900 p-5 shadow-sm border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all hover:shadow-md">
                       <div className="flex items-start justify-between">
                         <div className="flex items-center gap-4">
@@ -200,7 +200,7 @@ export const OwnerVaultDashboard: React.FC<OwnerVaultDashboardProps> = () => {
               <div className="flex flex-col gap-4">
                 {people.length === 0 ? (
                   <div className="text-sm text-slate-500 dark:text-slate-400 text-center py-4">No trusted contacts added yet.</div>
-                ) : people.map((person, pIdx) => (
+                ) : people.map((person: any, pIdx: number) => (
                   <div key={pIdx} className="flex items-center gap-3">
                     <div 
                       className="size-10 overflow-hidden rounded-full bg-slate-200 bg-cover bg-center" 
@@ -257,14 +257,14 @@ export const OwnerVaultDashboard: React.FC<OwnerVaultDashboardProps> = () => {
                 <button onClick={() => {
                   const csvRows = [
                     ["Service Name", "Tier", "Notes", "Date Added"],
-                    ...(accounts || []).map(a => [
+                    ...(accounts || []).map((a: any) => [
                       a.serviceName,
                       a.tier,
                       (a.notesEnc || "").replace(/"/g, '""'),
                       new Date(a.createdAt).toLocaleDateString()
                     ])
                   ];
-                  const csvContent = csvRows.map(row => row.map(cell => `"${cell}"`).join(",")).join("\n");
+                  const csvContent = csvRows.map((row: any) => row.map((cell: any) => `"${cell}"`).join(",")).join("\n");
                   const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
                   const url = URL.createObjectURL(blob);
                   const a = document.createElement("a");

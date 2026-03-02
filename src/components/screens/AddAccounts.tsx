@@ -89,7 +89,7 @@ export const AddAccounts: React.FC<AddAccountsProps> = () => {
               </div>
               
               <nav className="flex flex-col gap-1">
-                {PERSONAL_DETAILS_DATA.sidebarSteps.map((step, i) => {
+                {PERSONAL_DETAILS_DATA.sidebarSteps.map((step: any, i: number) => {
                   const isActive = step.label === "Asset Inventory";
                   return (
                     <div key={i} className={`flex items-center gap-4 px-3 py-3 rounded-lg cursor-pointer ${isActive ? 'bg-white/10 text-primary border-l-4 border-primary' : 'opacity-60 hover:opacity-100 transition-opacity'}`}>
@@ -148,7 +148,7 @@ export const AddAccounts: React.FC<AddAccountsProps> = () => {
               <div className="mb-6">
                 <span className="text-slate-900 dark:text-slate-300 text-sm font-semibold mb-3 block">{ADD_ACCOUNTS_DATA.form.urgencyLabel}</span>
                 <div className="flex flex-wrap gap-3">
-                  {ADD_ACCOUNTS_DATA.form.tiers.map((t, i) => (
+                  {ADD_ACCOUNTS_DATA.form.tiers.map((t: any, i: number) => (
                     <label key={i} className="cursor-pointer">
                       <input 
                         className="peer sr-only" 
@@ -203,7 +203,7 @@ export const AddAccounts: React.FC<AddAccountsProps> = () => {
             {/* Accounts List */}
             <div className="flex flex-col gap-4 pb-24">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Added Accounts ({accounts.length})</h3>
-              {accounts.map((account, i) => {
+              {accounts.map((account: any, i: number) => {
                 let colorClass = "blue";
                 let icon = "account_balance";
                 if (account.tier === "FINANCIAL") { colorClass = "emerald"; icon = "account_balance"; }
@@ -264,7 +264,7 @@ export const AddAccounts: React.FC<AddAccountsProps> = () => {
               </div>
               <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 hide-scrollbar">
                 <span className="text-xs text-slate-400 whitespace-nowrap mr-1">{ADD_ACCOUNTS_DATA.footer.suggestedLabel}</span>
-                {ADD_ACCOUNTS_DATA.footer.suggestedItems.map((item, i) => (
+                {ADD_ACCOUNTS_DATA.footer.suggestedItems.map((item: string, i: number) => (
                   <button key={i} className="shrink-0 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-500 transition-colors flex items-center gap-1" suppressHydrationWarning>
                     <span className="material-symbols-outlined text-[14px]">add</span> {item}
                   </button>

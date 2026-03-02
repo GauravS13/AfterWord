@@ -37,7 +37,7 @@ export const NameTrustedGuardian: React.FC<NameTrustedGuardianProps> = () => {
           </div>
           
           <nav className="flex flex-col gap-6">
-            {NAME_GUARDIAN_DATA.steps.map((step, i) => (
+            {NAME_GUARDIAN_DATA.steps.map((step: any, i: number) => (
               <React.Fragment key={i}>
                 <div className={`flex items-center gap-4 transition-colors ${step.current ? 'text-primary bg-primary/10 -mx-4 px-4 py-3 rounded-lg border-l-4 border-primary' : 'text-slate-400'}`}>
                   <span className="material-symbols-outlined text-2xl">{step.icon}</span>
@@ -121,7 +121,7 @@ export const NameTrustedGuardian: React.FC<NameTrustedGuardianProps> = () => {
                     onChange={(e) => setSelectedInvitee(e.target.value)}
                   >
                     <option value="" disabled>Select an invitee...</option>
-                    {invitees?.map((inv, idx) => (
+                    {invitees?.map((inv: any, idx: number) => (
                       <option key={idx} value={inv.emailEnc}>{inv.nameEnc} ({inv.emailEnc})</option>
                     ))}
                   </select>

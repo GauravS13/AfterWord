@@ -183,7 +183,7 @@ export const ExecutorAddAccounts: React.FC<ExecutorAddAccountsProps> = ({ estate
                 <span className="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded text-sm">{accounts.length}</span>
               </h3>
               <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden divide-y divide-slate-100 dark:divide-slate-700/50">
-                {accounts.map((acc, idx) => {
+                {accounts.map((acc: any, idx: number) => {
                   const tierOption = TIER_OPTIONS.find(t => t.value === acc.tier) || TIER_OPTIONS[0];
                   return (
                     <div key={idx} className="p-4 flex items-center justify-between">

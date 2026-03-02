@@ -84,7 +84,7 @@ export const ChooseInvitees: React.FC<ChooseInviteesProps> = () => {
               </div>
               
               <nav className="flex flex-col gap-1">
-                {PERSONAL_DETAILS_DATA.sidebarSteps.map((step, i) => {
+                {PERSONAL_DETAILS_DATA.sidebarSteps.map((step: any, i: number) => {
                   const isActive = step.label === "Executor Selection";
                   return (
                     <div key={i} className={`flex items-center gap-4 px-3 py-3 rounded-lg cursor-pointer ${isActive ? 'bg-white/10 text-primary border-l-4 border-primary' : 'opacity-60 hover:opacity-100 transition-opacity'}`}>
@@ -158,7 +158,7 @@ export const ChooseInvitees: React.FC<ChooseInviteesProps> = () => {
                 <div className="space-y-4">
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">{CHOOSE_INVITEES_DATA.form.roleLabel}</label>
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                    {CHOOSE_INVITEES_DATA.form.roles.map((role, i) => (
+                    {CHOOSE_INVITEES_DATA.form.roles.map((role: any, i: number) => (
                       <label key={i} className="cursor-pointer group relative">
                         <input 
                           className="peer sr-only" 
@@ -227,7 +227,7 @@ export const ChooseInvitees: React.FC<ChooseInviteesProps> = () => {
               <div className="mb-6">
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Added Invitees ({invitees.length})</h3>
                 <div className="flex flex-col gap-3">
-                  {invitees.map((inv, idx) => (
+                  {invitees.map((inv: any, idx: number) => (
                     <div key={idx} className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4 flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm shrink-0">
                         {inv.nameEnc.charAt(0).toUpperCase()}

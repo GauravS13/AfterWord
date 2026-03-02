@@ -192,16 +192,16 @@ export const generateOwnerLetter = action({
     ownerAccountId: v.id("ownerAccounts"),
     ownerId:        v.id("owners"),
   },
-  handler: async (ctx, args) => {
+  handler: async (ctx, args): Promise<{ success: boolean; alreadyExists: boolean; letterBody: string }> => {
     // Fetch owner + account data
     const owner = await ctx.runQuery(api.owners.getOwnerById, { ownerId: args.ownerId });
     const accounts = await ctx.runQuery(api.owners.getOwnerAccountsByOwnerId, { ownerId: args.ownerId });
-    const account = accounts.find((a: { _id: string }) => a._id === args.ownerAccountId);
+    const account = accounts.find((a: any) => a._id === args.ownerAccountId);
 
     if (!owner || !account) throw new Error("Owner or account not found");
 
     // Check if letter already exists
-    const existing = await ctx.runQuery(api.ownerLetters.getByOwnerAccount, {
+    const existing: any = await ctx.runQuery(api.ownerLetters.getByOwnerAccount, {
       ownerAccountId: args.ownerAccountId,
     });
     if (existing) {
