@@ -6,7 +6,7 @@
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Cormorant+Garamond&weight=600&size=28&duration=3500&pause=1000&color=13B39E&center=true&vCenter=true&multiline=true&repeat=true&width=720&height=100&lines=When+someone+passes%2C+their+family+inherits+100+accounts.;Afterword+closes+every+one.;Free.+Open+Source.+Built+for+the+people+left+behind." alt="Typing Animation"/>
+<img src="https://readme-typing-svg.demolab.com?font=Cormorant+Garamond&weight=600&size=28&duration=3500&pause=1000&color=13B39E&center=true&vCenter=true&multiline=true&repeat=true&width=720&height=140&lines=When+someone+passes%2C+their+family+inherits+100+accounts.;Afterword+closes+every+one.;Free.+Open+Source.+Built+for+the+people+left+behind." alt="Typing Animation"/>
 
 </div>
 
