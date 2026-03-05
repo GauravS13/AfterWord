@@ -14,6 +14,22 @@
 
 <div align="center">
 
+### 🎬 &nbsp; See It In Action
+
+<a href="https://drive.google.com/file/d/1iZK2FtBRllHypaM6b0xo1RhehtEnI4Rl/view?usp=sharing">
+  <img src="https://img.shields.io/badge/▶_Watch_Demo-Google_Drive-13B39E?style=for-the-badge&logo=googledrive&logoColor=white" alt="Watch Demo on Google Drive"/>
+</a>
+
+<br/>
+
+<sub>📂 Or watch locally: <a href="demo/Afterword_Digital_Legacy.mp4"><code>demo/Afterword_Digital_Legacy.mp4</code></a></sub>
+
+</div>
+
+<br/>
+
+<div align="center">
+
 [![Next.js](https://img.shields.io/badge/Next.js_16.1.6-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript_5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
 [![Convex](https://img.shields.io/badge/Convex_1.32.0-EE342F?style=for-the-badge&logo=convex&logoColor=white)](https://convex.dev)
